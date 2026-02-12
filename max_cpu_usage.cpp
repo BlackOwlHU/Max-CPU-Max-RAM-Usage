@@ -5,7 +5,6 @@
 using namespace std;
 
 void cpu_work() {
-    cout << "CPU intensive work load started." << endl;
     volatile unsigned long long counter = 0;
     while (true) { 
         counter++; 
@@ -18,6 +17,7 @@ int main() {
 
     cout << "CPU threads available: " << cpu_threads << endl;
 
+    cout << "CPU intensive work load started." << endl;
     for (int i = 0; i < cpu_threads; ++i) { 
         threads.emplace_back(cpu_work);
     }
@@ -27,4 +27,5 @@ int main() {
     }
 
     return 0;
+
 }
